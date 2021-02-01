@@ -1,6 +1,11 @@
 # pyramide
 ################################## opdracht 1 ##################################
 def opdracht_1():
+    """
+    Deze functie print een pyramide aan de hand van 2 for loops en 4 while loops
+    De laatste 2 while loops printen de pyramide andersom
+    :return: pyramides
+    """
     i = int(input("hoe groot?"))
     for a in range(0, i):
         print('*' * a)
@@ -27,17 +32,9 @@ def opdracht_1():
 def tekstcheck():
     string_1 = input("geef string 1:\n")
     string_2 = input("geef string 2:\n")
-    shortest = 0
-    if len(string_1) < len(string_2):
-        shortest = len(string_1)
-    else:
-        shortest = len(string_2)
-    verschil = 0
-    for i in range(0, shortest):
-        if string_1[i] == string_2[i]:
-            verschil += 1
-        else:
-            print(f'het eerste verschil zit op index {verschil}')
+    for i in range(0,len(string_1)):
+        if string_1[i] != string_2[i]:
+            print(f'het eerste verschil zit op index {i}')
 
 
 ################################## opdracht 3 ##################################
@@ -147,11 +144,48 @@ def random_game():
     while int(input("what number did i get\n")) != i:
         print("try again")
     print("succes!")
-random_game()
+#random_game()
+
+################################## opdracht 8 ##################################
+def compressie(file):
+    '''
+    Lees file in en copy het to een lst
+
+    De while loop checked of de chars een tab of een space is.
+    :param file: input file
+    :return: New file zonder tabs en spaties
+    '''
+    with open(file, 'r') as myfile:
+        data=list(myfile.read())
+    f = open("new.txt", "w")
+    index = 0
+    line_start = False
+    while index < (len(data)-1):
+        if data[index] != ' ' and line_start == False:
+            line_start = True
+        if line_start == True and data[index] == '\n':
+            f.write('\n')
+            line_start = False
+        elif line_start == True and data[index] !='\n':
+            f.write(data[index])
+        index += 1
+    f.close()
+#compressie('opdracht_8.txt')
+
+################################## opdracht 9 ##################################
+
+def verschuif(ch,n):
+    return str(ch)[n::]+ str(ch)[:n:]
+# print(verschuif(1011000,3))
+# print(verschuif(1011100,-4))
+
 ################################## opdracht 10 ##################################
 
 def fibonaci(l, n0=0, n1=1):
     # lst.append(lst[len(lst) - 1] + lst[len(lst) - 2])
     return fibonaci(l - 1, n1, n0 + n1) if l != 0 else n0
-
 # print(palindroom_2('racecar'))
+
+################################## opdracht 11 ##################################
+def Caesercijfer(x):
+    return str(x)
