@@ -1,2 +1,2 @@
-# AI_Johan_van_de_Glind
+# Mastermind
 Opdracht van Johan van de Glind
