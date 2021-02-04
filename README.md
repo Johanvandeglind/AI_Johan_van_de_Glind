@@ -1,4 +1,4 @@
-#Mastermind setup:
+# Mastermind setup:
 
 ![](images/mastermind.jpg)
 
@@ -20,6 +20,24 @@
 ####	Keuze 2: Tegen computer spelen speler raad
 	Functie voor bedenken code van computer
 	Feedback functie van computer
+
+### Modules
+#### Strategies
+#### Own Algorithm
+##### Simpel strategie
+    uitleg komt nog
+##### Worst case
+    uitleg komt nog
+#### Gamerules
+    uitleg komt nog
+#### Gamemodes
+##### Player against computer (computer make code and player gueses) 
+    uitleg komt nog
+##### Computer against player (Player gueses)
+    uitleg komt nog
+#### Base functions
+##### Combination generator
+    uitleg komt nog
 
 
 ### Pseudo code
