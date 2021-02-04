@@ -1,6 +1,6 @@
 #Mastermind setup:
 
-###bron vermelding
+### bron vermelding
     tutorial video: https://www.youtube.com/watch?v=rSzX2TtjvHA&feature=youtu.be
     Paper groningen universiteit: Kooi, B. (2005). YET ANOTHER MASTERMIND STRATEGY. ICGA Journal, 28(1), 13–20. https://doi.org/10.3233/icg-2005-28105
 
