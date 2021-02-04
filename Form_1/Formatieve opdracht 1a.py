@@ -1,5 +1,5 @@
 # pyramide
-################################## opdracht 1 ##################################
+# opdracht 1
 def opdracht_1():
     """
     Deze functie print een pyramide aan de hand van 2 for loops en 4 while loops
@@ -27,17 +27,21 @@ def opdracht_1():
         print(' ' * (i - a) + '*' * a)
 
 
-
-################################## opdracht 2 ##################################
+# opdracht 2
 def tekstcheck():
     string_1 = input("geef string 1:\n")
     string_2 = input("geef string 2:\n")
-    for i in range(0,len(string_1)):
+    if len(string_1) < len(string_2):
+        lengte = len(string_1)
+    else:
+        lengte = len(string_2)
+    for i in range(0, lengte - 1):
         if string_1[i] != string_2[i]:
-            print(f'het eerste verschil zit op index {i}')
+            return print(f'het eerste verschil zit op index {i}')
+    return print(f'ze zijn hetzelfde')
 
 
-################################## opdracht 3 ##################################
+# opdracht 3
 
 def count(x, lst):
     count = 0
@@ -46,8 +50,6 @@ def count(x, lst):
         if lst[i] == x:
             count += 1
     return (count)
-
-
 
 
 def verschil_lst():
@@ -71,10 +73,11 @@ def verschil_lst():
 def opdracht3c(lst):
     return True if count(1, lst) > count(0, lst) and count(0, lst) < 13 else False
 
-#print(opdracht3c([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
+
+# print(opdracht3c([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
 
-################################## opdracht 4 ##################################
+# opdracht 4
 
 def palindroom(word):
     if len(word) == 0:
@@ -91,7 +94,8 @@ def palindroom(word):
 def palindroom_2(word):
     return word == word[::-1]
 
-################################## opdracht 5 ##################################
+
+# opdracht 5
 def my_sort(lst):
     """
     Sorteer gegeven lijst lst volgens het algoritme zoals beschreven in de pseudocode bij 1. hierboven.
@@ -100,20 +104,23 @@ def my_sort(lst):
     sorted_list = lst.copy()
     waarde_index = 0
 
-    while True:#for index in range(1,len(sorted_list)):
-        if waarde_index+1 < len(lst):
-            if sorted_list[waarde_index+1] < sorted_list[waarde_index]:
-                sorted_list[waarde_index+1], sorted_list[waarde_index] = sorted_list[waarde_index], sorted_list[waarde_index+1]
+    while True:  # for index in range(1,len(sorted_list)):
+        if waarde_index + 1 < len(lst):
+            if sorted_list[waarde_index + 1] < sorted_list[waarde_index]:
+                sorted_list[waarde_index + 1], sorted_list[waarde_index] = sorted_list[waarde_index], sorted_list[
+                    waarde_index + 1]
                 waarde_index = 0
             else:
-                waarde_index +=1
+                waarde_index += 1
         else:
             break
 
     return sorted_list
-#print(my_sort([5,10,4,1,20]))
 
-################################## opdracht 6 ##################################
+
+# print(my_sort([5,10,4,1,20]))
+
+# opdracht 6
 
 def gemiddelde(lst):
     n = len(lst)
@@ -124,8 +131,9 @@ def gemiddelde(lst):
     """ Retourneer het gemiddelde (float) van de lijst lst. """
     return total / n
 
+
 def gem_2(lst):
-    end_lst =[]
+    end_lst = []
     for item in lst:
         n = len(item)
         total = 0
@@ -135,18 +143,23 @@ def gem_2(lst):
         end_lst.append(total / n)
     return end_lst
 
-#print(gem_2([[1,2,3,4],[2,2,2]]))
 
-################################## opdracht 7 ##################################
+# print(gem_2([[1,2,3,4],[2,2,2]]))
+
+# opdracht 7
 from random import randint
+
+
 def random_game():
-    i = randint(1,10)
+    i = randint(1, 10)
     while int(input("what number did i get\n")) != i:
         print("try again")
     print("succes!")
-#random_game()
 
-################################## opdracht 8 ##################################
+
+# random_game()
+
+# opdracht 8
 def compressie(file):
     '''
     Lees file in en copy het to een lst
@@ -156,36 +169,47 @@ def compressie(file):
     :return: New file zonder tabs en spaties
     '''
     with open(file, 'r') as myfile:
-        data=list(myfile.read())
+        data = list(myfile.read())
     f = open("new.txt", "w")
     index = 0
     line_start = False
-    while index < (len(data)-1):
+    while index < (len(data) - 1):
         if data[index] != ' ' and line_start == False:
             line_start = True
         if line_start == True and data[index] == '\n':
             f.write('\n')
             line_start = False
-        elif line_start == True and data[index] !='\n':
+        elif line_start == True and data[index] != '\n':
             f.write(data[index])
         index += 1
     f.close()
-#compressie('opdracht_8.txt')
 
-################################## opdracht 9 ##################################
 
-def verschuif(ch,n):
-    return str(ch)[n::]+ str(ch)[:n:]
+# compressie('opdracht_8.txt')
+
+# opdracht 9
+
+def verschuif(ch, n):
+    return str(ch)[n::] + str(ch)[:n:]
+
+
 # print(verschuif(1011000,3))
 # print(verschuif(1011100,-4))
 
-################################## opdracht 10 ##################################
+# opdracht 10
 
 def fibonaci(l, n0=0, n1=1):
     # lst.append(lst[len(lst) - 1] + lst[len(lst) - 2])
     return fibonaci(l - 1, n1, n0 + n1) if l != 0 else n0
+
+
 # print(palindroom_2('racecar'))
 
-################################## opdracht 11 ##################################
-def Caesercijfer(x):
-    return str(x)
+# opdracht 11
+def Caesercijfer(x,shift):
+    a=''
+    for i in x:
+        print(ord(i))
+        a.join(str(ord(i))+shift)
+    return a
+print(Caesercijfer('hallo',25))
