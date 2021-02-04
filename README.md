@@ -2,11 +2,13 @@
 
 ![](images/mastermind.jpg)
 
-### bron vermelding
+#### bron vermelding
     Boss, R. (2021, 19 januari). HU Structured Programming - Mastermind. Youtube. https://www.youtube.com/watch?v=rSzX2TtjvHA&feature=youtu.be
     Paper groningen universiteit: 
     Kooi, B. (2005). YET ANOTHER MASTERMIND STRATEGY. ICGA Journal, 28(1), 13–20. https://doi.org/10.3233/icg-2005-28105
-
+#### libraries
+    random
+    
 ###	Main programma: communicatie met user met keuze menu uit 4 spel vorm opties
 ####	Keuze 1: Computer tegen speler
     Invoer user combinatie
