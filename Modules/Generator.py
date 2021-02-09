@@ -9,13 +9,14 @@ def Generate(feedback:dict,round:str,):
                 code[i] = randint(0,5)
         print(code)
         return code
-    #if round == 'round_1':
-        #for i in range(0,feedback['round_0']['black_pins']):
-    #return code
+
 
 
 
 def game_player_gueses():
+    """
+
+    """
     feedback = dict(round_0=dict(black_pins=0, white_pins=0, old_code=[0, 0, 0, 0]),
                     round_1=dict(black_pins=0, white_pins=0, old_code=[0, 0, 0, 0]),
                     round_2=dict(black_pins=0, white_pins=0, old_code=[0, 0, 0, 0]),
@@ -45,27 +46,34 @@ def game_player_gueses():
 
 
 def raad_code_user(feedback:dict,round:int):
-    '''
+    """
 
-    '''
+    @param feedback:
+    @param round:
+    @return:
+    """
     if round == 0:
         inp_code= user_color_code()
     elif round == 9:
         print('Dit is uw laatste kans')
         print("-----------------------------------------------------------------------------------------------")
-        for i in range(0, round):
-            uitschfijven_feedback(round,i,feedback)
+        uitschfijven_feedback(round,feedback)
         inp_code= user_color_code()
     else:
         print("-----------------------------------------------------------------------------------------------")
-        for i in range(0,round):
-            uitschfijven_feedback(round, i, feedback)
+        uitschfijven_feedback(round, feedback)
         inp_code =user_color_code()
     return inp_code
 
 
 
-def uitschfijven_feedback(round:int,i:int,feedback:dict):
+def uitschfijven_feedback(round:int,feedback:dict):
+    """
+
+    @param round:
+    @param feedback:
+    @return:
+    """
     kleuren_combi = ['Zwart', 'Wit', 'Rood', 'Geel', 'Blauw', 'Groen']
     for i in range(0, round):
         print(f'Feedback {i + 1}e ronde:\n'
@@ -75,15 +83,12 @@ def uitschfijven_feedback(round:int,i:int,feedback:dict):
         print("-----------------------------------------------------------------------------------------------")
 
 def user_color_code():
-    '''
+    """
     Fucntie voor het invoeren van de code van user (raden of bij het starten)
-    '''
-    inp_code = []
-    kleuren = ['1:Zwart', '2:Wit', '3:Rood', '4:Geel', '5:Blauw', '6:Groen']
-    for i in range(0, 4):
-        inp_code.append(int(input(
-            f'Wat is de {i + 1}e kleur, maak een keuze uit deze 6 kleuren (geef uw nummer op):\n1:Zwart\n2:Wit\n3:Rood\n4:Geel\n5:Blauw\n6:Groen\n')) - 1)
-        print(f'Uw keuze was {kleuren[inp_code[i]]}')
+    @return: de ingevoerde code van de user
+    """
+    inp_code=(list(input(f'Wat zijn de kleuren, maak een keuze uit deze 6 kleuren (geef zo 1234 uw nummers op):\n0:Zwart\n1:Wit\n2:Rood\n3:Geel\n4:Blauw\n5:Groen\n')))
+    inp_code =[int(item) for item in inp_code]
     return inp_code
 
 
