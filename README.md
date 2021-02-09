@@ -17,6 +17,7 @@
 ### Modules
 #### Strategies
 #### Own Algorithm
+    random
 ##### Simpel strategie
     uitleg komt nog
 ##### Worst case
@@ -30,7 +31,7 @@
     uitleg komt nog
 #### Base functions
 ##### Combination generator
-    uitleg komt nog
+    uitleg komt nog 
 ---------
 ### Pseudo code
 #### inv_user_combi()
